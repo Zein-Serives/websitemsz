@@ -1,0 +1,22 @@
+
+:root{--masz-brand:#00c853;}
+.masz-badge{display:inline-block;padding:.35rem .6rem;border:1px solid rgba(255,255,255,.2);border-radius:999px;margin:.25rem .35rem 0 0;font-size:.9rem;opacity:.9}
+.masz-hero .logo{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.masz-hero .logo img{height:56px;width:auto;border-radius:8px}
+.masz-hero .kicker{letter-spacing:.12em;text-transform:uppercase;color:#b7c0cc;font-weight:600;margin-bottom:.25rem}
+.masz-hero h1 strong{color:var(--masz-brand)}
+.masz-cta .button{margin-right:.6rem}
+.masz-grid{display:grid;gap:1.2rem}
+.masz-cols-3{grid-template-columns:repeat(3,1fr)}
+.masz-cols-2{grid-template-columns:repeat(2,1fr)}
+.masz-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:1.1rem}
+.masz-kpi{font-size:2rem;font-weight:800;color:var(--masz-brand)}
+.masz-quote{font-style:italic;opacity:.95}
+.masz-quote cite{display:block;margin-top:.4rem;opacity:.8}
+.masz-list-check{list-style:"✓ ";padding-left:1.2rem}
+.masz-muted{opacity:.75}
+@media (max-width: 980px){
+  .masz-cols-3{grid-template-columns:1fr}
+  .masz-cols-2{grid-template-columns:1fr}
+  .masz-hero .logo img{height:48px}
+}
