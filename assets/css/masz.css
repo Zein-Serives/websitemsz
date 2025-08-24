@@ -1,1 +1,26 @@
 :root{--masz-brand:#00c853} .badge{display:inline-block;border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:.35rem .6rem;margin:.2rem .3rem 0 0;font-size:.9rem;opacity:.95}
+/* === NAV / BURGER FIX === */
+#header .toggle,
+.navPanelToggle 
+{
+  position: fixed; /* fixiert oben */
+  top: 14px;
+  left: 14px;
+  z-index: 2000;  /* über dem Content */
+  background: rgba(0,0,0,.55);
+  color: #fff !important;
+  border-radius: 10px;
+  padding: 10px 12px;
+  line-height: 1;
+  box-shadow: 0 6px 14px rgba(0,0,0,.25);
+}
+@media (min-width: 981px){
+  /* Auf Desktop Sidebar verfügbar, Burger ausblenden */
+  #header .toggle, .navPanelToggle { display:none !important; }
+}
+/* === TYPO / KONTRAST === */
+body { color:#0f172a; }                 /* dunkles Anthrazit statt grau */
+h1,h2,h3 { color:#0b1220; }
+p.muted, .muted { color:#4b5563; opacity:1; } /* ‚muted‘ bleibt gut lesbar */
+a { color:#0ea5e9; }                    /* freundlicher Linkton */
+.main.style1, .main.style2, .main.style3 { background:#ffffff; }
