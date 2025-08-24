@@ -1,1 +1,206 @@
-<!DOCTYPE html><html><head><title>Preise</title></head><body><h1>Rechner</h1></body></html>
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preise & Rechner – MASZ Solutions</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/masz.css" />
+</head>
+<body class="is-preload">
+<div id="wrapper">
+
+<header id="header"><a href="home.html" class="logo"><img src="assets/logo.png" alt="" style="height:28px;vertical-align:middle;margin-right:.4rem">MASZ Solutions</a></header>
+
+<div class="promo-banner">
+  <span>🎉 <strong>MASZ Relaunch Special</strong></span>
+  <small>Neueröffnungspreise – nur für kurze Zeit</small>
+</div>
+
+<div id="main">
+<section class="post">
+  <header class="major">
+    <h1>Richtwerte & Kostenrechner</h1>
+    <p class="badge">🎉 MASZ Relaunch Special</p>
+    <p class="muted"><strong>Neueröffnungspreise</strong> – fair und transparent. Alle Werte sind <strong>Richtwerte</strong>; die endgültige Kalkulation erfolgt nach Absprache mit allen Tourdaten und unserer Disposition.</p>
+  </header>
+
+  <!-- Vergleichstabelle: Alt (A) vs Neu (nur wo geändert) -->
+  <div class="card">
+    <h3>Vergleich (Auszug)</h3>
+    <table>
+      <thead><tr><th>Position</th><th>Alt (A)</th><th>Neu (Special)</th><th>Ersparnis</th></tr></thead>
+      <tbody>
+        <tr><td>Stundensatz (Basis)</td><td style="color:red"><s>47 €/h</s></td><td><strong>32 €/h</strong></td><td><strong>−32 %</strong></td></tr>
+        <tr><td>Stand-/Wartezeit je Stunde</td><td style="color:red"><s>30 €/h</s></td><td><strong>17 €/h</strong></td><td><strong>−43 %</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="price-wrap">
+    <!-- Abrechnungsart -->
+    <div class="row">
+      <label>Abrechnungsart</label>
+      <select id="mode">
+        <option value="km">pro Kilometer</option>
+        <option value="hour">pro Stunde</option>
+        <option value="day">pro Tag</option>
+      </select>
+    </div>
+
+    <!-- KM (nur bei 'km') -->
+    <div class="row mode-km">
+      <label>Distanz (km)</label>
+      <input id="distance" type="number" min="0" step="1" value="250">
+    </div>
+    <div class="row mode-km">
+      <label>Preis / km (€)</label>
+      <input id="rateKm" type="number" min="0" step="0.01" value="0.81">
+    </div>
+    <div class="row mode-km">
+      <label>Mindestpreis (€)</label>
+      <input id="minPrice" type="number" min="0" step="1" value="67">
+    </div>
+
+    <!-- Stunde (nur bei 'hour') -->
+    <div class="row mode-hour">
+      <label>Stunden</label>
+      <input id="hours" type="number" min="0" step="0.5" value="6">
+    </div>
+    <div class="row mode-hour">
+      <label>Preis / Stunde (€)</label>
+      <input id="rateHour" type="number" min="0" step="0.5" value="32">
+    </div>
+
+    <!-- Tag (nur bei 'day') -->
+    <div class="row mode-day">
+      <label>Tage</label>
+      <input id="days" type="number" min="1" step="1" value="1">
+    </div>
+    <div class="row mode-day">
+      <label>Preis / Tag (9h inkl. Pause) (€)</label>
+      <input id="rateDay" type="number" min="0" step="1" value="194">
+    </div>
+    <div class="row mode-day">
+      <label><strong>Kilometer inklusive bis 300&nbsp;km</strong> (darüber Aufpreis)</label>
+      <div></div>
+    </div>
+
+    <!-- Gemeinsame Zuschläge -->
+    <div class="row">
+      <label>Be-/Entladezeit (Minuten) – <strong>20 min frei</strong></label>
+      <input id="loadMins" type="number" min="0" step="5" value="30">
+    </div>
+    <div class="row">
+      <label>Standzeit (Stunden) – wenn Wagen steht</label>
+      <input id="standHours" type="number" min="0" step="0.5" value="1">
+    </div>
+    <div class="row">
+      <label>Standgebühr / Stunde (€)</label>
+      <input id="standRate" type="number" min="0" step="1" value="17">
+    </div>
+
+    <!-- Nacht/So/Feiertag (+25% auf Stunde/Tag) -->
+    <div class="row">
+      <label><input type="checkbox" id="nightHoliday"> Nacht / Sonntag / Feiertag (+25% auf Stunde/Tag)</label>
+    </div>
+
+    <div class="row">
+      <label>Maut / Sonstiges (€)</label>
+      <input id="extras" type="number" min="0" step="1" value="0">
+    </div>
+
+    <div class="row">
+      <button id="calcBtn" class="button primary" type="button">Berechnen</button>
+      <button id="saveBtn" class="button" type="button">Einstellungen merken</button>
+      <button id="resetBtn" class="button" type="button">Zurücksetzen</button>
+    </div>
+
+    <!-- Ergebnis -->
+    <div class="card" style="margin-top:10px">
+      <h3>Ergebnis (Richtwert)</h3>
+      <table>
+        <tbody id="breakdown"><tr><td>Bitte auf „Berechnen“ klicken.</td></tr></tbody>
+        <tfoot><tr class="total"><td>Gesamtsumme (netto)</td><td id="total">–</td></tr></tfoot>
+      </table>
+      <p class="muted">
+        <strong>Wichtiger Hinweis:</strong> Alle Preise sind <strong>Richtwerte</strong>.
+        Der endgültige Preis wird nach Absprache mit allen Tourdaten und unserer Disposition individuell festgelegt.
+        <br>Aktion: <strong>MASZ Relaunch Special</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer id="footer"><p class="copyright">© <span id="y"></span> MASZ Solutions · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p></footer>
+</div>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){
+  const $ = id => document.getElementById(id);
+  const fields = ["mode","distance","hours","days","rateKm","rateHour","rateDay","minPrice","loadMins","standHours","standRate","extras"];
+  function euro(n){ return (Math.round(n*100)/100).toFixed(2).replace('.', ',') + ' €'; }
+  function toggleFields(){
+    const mode = $("mode").value;
+    document.querySelectorAll(".mode-km").forEach(el=>el.style.display = (mode==="km")?"grid":"none");
+    document.querySelectorAll(".mode-hour").forEach(el=>el.style.display = (mode==="hour")?"grid":"none");
+    document.querySelectorAll(".mode-day").forEach(el=>el.style.display = (mode==="day")?"grid":"none");
+  }
+  function calc(){
+    const mode = $("mode").value;
+    const distance = parseFloat($("distance").value||0);
+    const hours = parseFloat($("hours").value||0);
+    const days = parseFloat($("days").value||0);
+    const rateKm = parseFloat($("rateKm").value||0);
+    const rateHour = parseFloat($("rateHour").value||0);
+    const rateDay = parseFloat($("rateDay").value||0);
+    const minPrice = parseFloat($("minPrice").value||0);
+    const loadMins = parseFloat($("loadMins").value||0);
+    const standHours = parseFloat($("standHours").value||0);
+    const standRate = parseFloat($("standRate").value||0);
+    const extras = parseFloat($("extras").value||0);
+    const nightHoliday = $("nightHoliday").checked;
+    let rows=[], base=0;
+    const freeLoad = 20;
+    let billableLoadMins = Math.max(loadMins - freeLoad, 0);
+    let loadCost = (billableLoadMins/60) * standRate;
+    if (billableLoadMins>0) rows.push(["Be-/Entladezeit (über 20 min)", billableLoadMins+" min × "+standRate.toFixed(0)+" €", euro(loadCost)]);
+    base += loadCost;
+    if (standHours>0){ let c = standHours * standRate; rows.push(["Standzeit", standHours+" h × "+standRate.toFixed(0)+" €", euro(c)]); base += c; }
+    if (mode==="km"){
+      let c = distance * rateKm;
+      if (c < minPrice) { rows.push(["Kilometer (Mindestpreis greift)", distance+" km × "+rateKm.toFixed(2)+" €", euro(minPrice)]); base += minPrice; }
+      else { rows.push(["Kilometer", distance+" km × "+rateKm.toFixed(2)+" €", euro(c)]); base += c; }
+    }
+    if (mode==="hour"){
+      let c = hours * rateHour;
+      if (nightHoliday) c *= 1.25; 
+      rows.push([nightHoliday?"Fahrzeit (Nacht/So/FT +25%)":"Fahrzeit", hours+" h × "+rateHour.toFixed(0)+" €", euro(c)]);
+      base += c;
+    }
+    if (mode==="day"){
+      let c = days * rateDay;
+      if (nightHoliday) c *= 1.25;
+      rows.push([nightHoliday?"Tagessatz (Nacht/So/FT +25%)":"Tagessatz", days+" × "+rateDay.toFixed(0)+" €", euro(c)]);
+      rows.push(["Hinweis", "<strong>Kilometer bis 300 km inklusive</strong>, darüber Aufpreis.", ""]);
+      base += c;
+    }
+    if (extras>0){ rows.push(["Maut / Sonstiges", "", euro(extras)]); base += extras; }
+    $("breakdown").innerHTML = rows.map(r=>`<tr><td>${r[0]}<br><span class='muted'>${r[1]}</span></td><td>${r[2]}</td></tr>`).join('');
+    $("total").textContent = euro(base);
+  }
+  function save(){ const data={}; fields.forEach(id=>{ const el=$(id); if (el) data[id]=el.value; }); data.nightHoliday = $("nightHoliday").checked; localStorage.setItem("maszRechner", JSON.stringify(data)); }
+  function load(){ try{ const data = JSON.parse(localStorage.getItem("maszRechner")||"{}"); fields.forEach(id=>{ if (data[id]!==undefined && $(id)) $(id).value = data[id]; }); if (data.nightHoliday!==undefined) $("nightHoliday").checked = !!data.nightHoliday; }catch(e){} toggleFields(); }
+  function resetAll(){ localStorage.removeItem("maszRechner"); $("mode").value = "km"; ["distance","hours","days","rateKm","rateHour","rateDay","minPrice","loadMins","standHours","standRate","extras"].forEach(id=>{ if($(id)) $(id).value = ""; }); $("nightHoliday").checked = false; $("breakdown").innerHTML="<tr><td>Bitte Eingaben setzen und „Berechnen“ klicken.</td></tr>"; $("total").textContent="–"; toggleFields(); }
+  $("mode").addEventListener("change", toggleFields);
+  $("calcBtn").addEventListener("click", calc);
+  $("saveBtn").addEventListener("click", save);
+  $("resetBtn").addEventListener("click", resetAll);
+  window.addEventListener("DOMContentLoaded", load);
+})();
+</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

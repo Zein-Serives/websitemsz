@@ -1,1 +1,73 @@
-/* custom styles */
+
+/* ===== MASZ overlay for HTML5UP Massively ===== */
+:root{ --brand:#00c853; --ink:#0f172a; --ink-strong:#0b1220; }
+body, input, select, textarea { color: var(--ink); }
+h1, h2, h3, h4 { color: var(--ink-strong); }
+a { color:#0ea5e9; }
+.muted { color:#475569; opacity:1; }
+
+/* Promo Banner */
+.promo-banner{
+  position: relative; display:flex; align-items:center; justify-content:center;
+  gap:.6rem; padding:.65rem .9rem;
+  background: linear-gradient(90deg, #00c853 0%, #00b24b 100%);
+  color:#04210f; font-weight:800; letter-spacing:.2px;
+  border-bottom:1px solid rgba(2,6,23,.08);
+}
+.promo-banner small{font-weight:600; opacity:.9}
+.promo-banner a{ display:inline-flex; align-items:center; gap:.4rem;
+  padding:.45rem .7rem; border-radius:.5rem; background:#04210f; color:#dbffe7;
+  text-decoration:none; font-weight:700;
+}
+.promo-banner a:hover{ transform: translateY(-1px); }
+
+/* Header sticky polishing */
+#header { position: sticky; top: 0; z-index: 999; backdrop-filter: blur(8px);
+  background: rgba(255,255,255,.75); border-bottom: 1px solid rgba(2,6,23,.08); }
+#nav .links li a { padding: .6rem .8rem; border-radius: .5rem; }
+#nav .links li a:hover, #nav .links li a.active { background: rgba(2,6,23,.06); }
+
+/* Hero overlay darker for readability */
+#intro{
+  position:relative; color:#fff;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.50), rgba(0,0,0,.65)),
+    url('images/hero.jpg') center/cover no-repeat;
+}
+#intro .badge{ background: rgba(255,255,255,.15); border-color: rgba(255,255,255,.25); color:#fff; }
+.badge{display:inline-block;border:1px solid rgba(2,6,23,.12);border-radius:999px;
+  padding:.35rem .6rem;margin:.25rem .35rem 0 0;background:#eef2f7;font-size:.9rem}
+
+/* Logo sizing: big in hero, small sticky */
+.hero-logo { height: 84px; width:auto; border-radius:8px; margin-bottom:.6rem; }
+#header .logo img { height:32px; width:auto; vertical-align:middle; margin-right:.4rem; }
+
+/* Cards and grids */
+.card{background:#f8fafc;border:1px solid rgba(2,6,23,.08);border-radius:14px;padding:1.1rem 1.2rem}
+.kpi{font-weight:800;color:var(--brand);}
+.usp-grid{display:grid;gap:1.1rem;grid-template-columns:repeat(3,minmax(0,1fr))}
+.usp-refs{display:grid;gap:.6rem;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:.8rem}
+.usp-refs .ref{display:flex;align-items:center;justify-content:center;min-height:46px;padding:0 .6rem;border:1px solid rgba(2,6,23,.1);border-radius:10px;background:#f7f9fb;font-weight:600}
+@media(max-width:880px){ .usp-grid{grid-template-columns:1fr 1fr} .usp-refs{grid-template-columns:1fr 1fr} }
+@media(max-width:580px){ .usp-grid{grid-template-columns:1fr} }
+
+/* Prices page */
+.price-wrap{max-width:1100px;margin:0 auto;padding:2rem 1rem}
+.row{display:grid;grid-template-columns:1.2fr 1fr;gap:10px;align-items:center;margin:.5rem 0}
+.row input,.row select{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(2,6,23,.15);background:#ffffff;color:#0f172a}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th,td{border:1px solid rgba(2,6,23,.12);padding:10px;text-align:left}
+th{background:#f1f5f9}
+table tr:hover td{background:#f8fafc}
+.total{font-weight:800}
+.button.primary{background:var(--brand)!important;color:#04210f!important;border-color:transparent}
+
+/* Back to top button */
+.back-to-top{
+  position:fixed; bottom:18px; right:18px; z-index:1000;
+  display:none; align-items:center; justify-content:center;
+  width:44px; height:44px; border-radius:999px;
+  background:#0b1220; color:#dbffe7; text-decoration:none; font-size:20px;
+  box-shadow:0 8px 22px rgba(0,0,0,.25);
+}
+.back-to-top.show { display:flex; }
