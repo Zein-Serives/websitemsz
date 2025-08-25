@@ -1,0 +1,90 @@
+
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buchung / Anfrage – MASZ Solutions</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/masz.css" />
+  <style>
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .pill{display:inline-block;padding:.3rem .6rem;border:1px solid rgba(2,6,23,.12);border-radius:999px;background:#f5f7fa}
+    .mini{font-size:.9rem;color:#475569}
+    .card-soft{background:#f8fafc;border:1px solid rgba(2,6,23,.08);border-radius:12px;padding:12px}
+    .row{display:grid;grid-template-columns:1.2fr 1fr;gap:10px;align-items:center;margin:.5rem 0}
+    .row input,.row textarea{width:100%;padding:10px;border:1px solid rgba(2,6,23,.15);border-radius:10px}
+    .del{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:.35rem .6rem}
+  </style>
+</head>
+<body class="is-preload"><div id="wrapper">
+
+<header id="header"><a href="home.html" class="logo"><img src="assets/logo.png" alt="" style="height:28px;margin-right:.4rem">MASZ Solutions</a></header>
+
+<div id="main"><section class="post">
+  <header class="major"><h1>Direkte Anfrage / Buchung</h1>
+    <p class="muted">Fülle die Daten aus – wir melden uns umgehend zur Bestätigung. <span class="pill">Telefon & E‑Mail sind Pflicht</span>.</p>
+  </header>
+
+  <div class="card-soft">
+    <div class="grid-2">
+      <div><div class="mini">Richtwert Gesamt</div><div id="totalAmount" style="font-weight:800;font-size:1.4rem">–</div></div>
+      <div><div class="mini">Abrechnungsart</div><div id="modeInfo" style="font-weight:700">–</div></div>
+    </div>
+  </div>
+
+  <form id="bookingForm" class="price-wrap" action="https://formspree.io/f/XXXXXXX" method="POST">
+    <input type="hidden" name="total_amount" id="totalHidden" value="">
+    <input type="hidden" name="mode" id="modeHidden" value="">
+    <h3 style="margin-top:14px">Kontaktdaten</h3>
+    <div class="row"><label>Vor- & Nachname *</label><input name="name" required></div>
+    <div class="row"><label>Telefon *</label><input name="phone" required></div>
+    <div class="row"><label>E‑Mail *</label><input name="email" type="email" required></div>
+
+    <h3 style="margin-top:14px">Abholung(en)</h3>
+    <div id="pickups"></div>
+    <button class="button small" id="addPickup" type="button">+ Abholung hinzufügen</button>
+
+    <h3 style="margin-top:14px">Lieferung(en)</h3>
+    <div id="drops"></div>
+    <button class="button small" id="addDrop" type="button">+ Lieferung hinzufügen</button>
+
+    <h3 style="margin-top:14px">Details</h3>
+    <div class="row"><label>Wunschtermin (optional)</label><input name="when" placeholder="z. B. 28.08., 10:00"></div>
+    <div class="row"><label>Hinweise</label><textarea name="notes" rows="4" placeholder="Besonderheiten, Ladung, Zeitfenster …"></textarea></div>
+
+    <p class="mini">Falls das Formular nicht funktioniert, sende uns deine Angaben per E‑Mail an <a href="mailto:info@masz-solutions.de">info@masz-solutions.de</a>.</p>
+
+    <div class="row"><button class="button primary" type="submit">Anfrage absenden</button></div>
+  </form>
+</section></div>
+
+<footer id="footer"><p class="copyright">© <span id="y"></span> MASZ Solutions · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p></footer>
+</div>
+
+<script>
+  document.getElementById('y').textContent=new Date().getFullYear();
+  const qs=new URLSearchParams(location.search);
+  const total=parseFloat(qs.get('amount')||'0'); const mode=qs.get('mode')||'';
+  const euro=n=>(Math.round(n*100)/100).toFixed(2).replace('.', ',')+' €';
+  document.getElementById('totalAmount').textContent=total>0?euro(total):'–';
+  document.getElementById('modeInfo').textContent=({km:'pro Kilometer',hour:'pro Stunde',day:'pro Tag'}[mode]||'–');
+  document.getElementById('totalHidden').value=total>0?total.toFixed(2):'';
+  document.getElementById('modeHidden').value=mode;
+
+  const pickups=document.getElementById('pickups'), drops=document.getElementById('drops');
+  function stopField(type){
+    const wrap=document.createElement('div'); wrap.className='row';
+    wrap.innerHTML='<label>'+ (type==='pickup'?'Abholung':'Lieferung') +'</label>\
+      <div style="display:flex;gap:8px">\
+        <input name="'+type+'[]" placeholder="Straße, Nr, PLZ Ort, Firma">\
+        <button type="button" class="del">×</button>\
+      </div>';
+    wrap.querySelector('.del').onclick=()=>wrap.remove(); return wrap;
+  }
+  function addPickup(){ pickups.appendChild(stopField('pickup')); }
+  function addDrop(){ drops.appendChild(stopField('drop')); }
+  document.getElementById('addPickup').onclick=addPickup;
+  document.getElementById('addDrop').onclick=addDrop;
+  addPickup(); addDrop();
+</script>
+</body></html>
