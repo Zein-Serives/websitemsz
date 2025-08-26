@@ -7,11 +7,11 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/masz.css" />
 </head>
-<body class="is-preload home-dark">
+<body class="is-preload">
 <div id="wrapper">
 
 <header id="header">
-  <a href="home.html" class="logo"><img src="assets/logo.png" alt="MASZ">MASZ Solutions</a>
+  <a href="home.html" class="logo"><img src="assets/logo.png" alt="">MASZ Solutions</a>
   <nav id="nav">
     <ul class="links">
       <li><a href="#intro">Home</a></li>
@@ -24,32 +24,19 @@
 </header>
 
 <div id="main">
-  <section id="intro" class="post">
-    <div class="hero-wrap">
-      <img src="assets/logo.png" alt="MASZ Logo" style="height:92px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.35);margin-bottom:10px">
-      <h1>MASZ SOLUTIONS</h1>
-      <p>Security & Transport bis <strong>3,5 t</strong> – schnell, sicher, mit <strong>Liebe zum Detail</strong>.<br>Direktfahrten · Sameday/Overnight · Paletten & Stückgut · EU‑weit</p>
-      <ul class="features">
-        <li>EU‑weit</li><li>Direkt ohne Umladung</li><li>Dokumentation</li><li>Fixpreise auf Anfrage</li>
-      </ul>
-    </div>
+  <section id="intro" class="post" style="text-align:center; padding-top:8px;">
+    <img src="assets/logo.png" alt="" style="height:84px;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.12);margin-bottom:6px">
+    <h1>MASZ SOLUTIONS</h1>
+    <p>Security & Transport bis <strong>3,5 t</strong> – schnell, sicher, mit <strong>Liebe zum Detail</strong>.<br>Direktfahrten · Sameday/Overnight · Paletten & Stückgut · EU‑weit</p>
+    <ul class="features"><li>EU‑weit</li><li>Direkt ohne Umladung</li><li>Dokumentation</li><li>Fixpreise auf Anfrage</li></ul>
   </section>
 
   <section id="stark" class="post">
     <header class="major"><h2>Unsere Stärken</h2></header>
-    <div class="masz-cards">
-      <div class="masz-card">
-        <h3><span class="ic"><i class="icon solid fa-truck-moving"></i></span>Erfahrung</h3>
-        <p>Vom Fahren über Dispo bis Fuhrpark – wir kennen die Logistik von innen und liefern realistische, verlässliche Zeitfenster.</p>
-      </div>
-      <div class="masz-card">
-        <h3><span class="ic"><i class="icon solid fa-file-signature"></i></span>Transparenz</h3>
-        <p>Foto-Doku, ETA-Updates, klare Abläufe. Auf Wunsch NDA und sensible Übergaben mit Dokumentation.</p>
-      </div>
-      <div class="masz-card">
-        <h3><span class="ic"><i class="icon solid fa-shield-alt"></i></span>Security</h3>
-        <p>Diskrete Abwicklung, Ident-Checks und abgestimmte Sicherheitsprotokolle – besonders für zeitkritische/sensible Güter.</p>
-      </div>
+    <div class="cards">
+      <div class="card"><h3>Erfahrung</h3><p>Vom Fahren über Dispo bis Fuhrpark – wir kennen die Logistik von innen und liefern verlässliche Zeitfenster.</p></div>
+      <div class="card"><h3>Transparenz</h3><p>Foto-Doku, ETA-Updates, klare Abläufe. Auf Wunsch NDA und sensible Übergaben mit Dokumentation.</p></div>
+      <div class="card"><h3>Security</h3><p>Diskrete Abwicklung, Ident-Checks und abgestimmte Sicherheitsprotokolle – besonders für zeitkritische/sensible Güter.</p></div>
     </div>
   </section>
 
@@ -65,19 +52,14 @@
   </section>
 </div>
 
-<footer id="footer" style="background:transparent;border-top:1px solid rgba(255,255,255,.08);">
+<footer id="footer">
   <p class="copyright">© <span id="y"></span> MASZ Solutions ·
     <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
 </footer>
 </div>
 
 <script>
-(function(){
-  const h=document.getElementById('header');
-  function onS(){ window.scrollY>10 ? h.classList.add('scrolled') : h.classList.remove('scrolled'); }
-  window.addEventListener('scroll', onS, {passive:true}); onS();
-  document.getElementById('y').textContent = new Date().getFullYear();
-})();
+document.getElementById('y').textContent=new Date().getFullYear();
 </script>
 </body>
 </html>

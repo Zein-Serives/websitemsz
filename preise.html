@@ -79,9 +79,6 @@
 
 <script>
 (function(){
-  const h = document.getElementById('header');
-  function onS(){ window.scrollY>10 ? h.classList.add('scrolled') : h.classList.remove('scrolled'); }
-  window.addEventListener('scroll', onS, {passive:true}); onS();
   document.getElementById('y').textContent = new Date().getFullYear();
 })();
 </script>
