@@ -1,1 +1,64 @@
-<!-- projekte.html full content provided in assistant's message -->
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projekte – MASZ Solutions</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/masz.css" />
+  <style>
+    .proj-grid{display:grid;gap:18px;grid-template-columns:repeat(3,minmax(0,1fr))}
+    .proj{background:#fff;border:1px solid rgba(2,6,23,.12);border-radius:14px;overflow:hidden}
+    .proj img{width:100%;height:160px;object-fit:cover;background:#e2e8f0}
+    .proj .p{padding:14px}
+    .proj h3{margin:.2rem 0 .4rem}
+    .pill{display:inline-block;padding:.2rem .5rem;border-radius:999px;background:#f1f5f9;border:1px solid rgba(2,6,23,.12);margin-right:.35rem}
+    @media(max-width:980px){.proj-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.proj-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body class="is-preload page--plain">
+<div id="wrapper">
+<header id="header"><a href="home.html" class="logo"><img src="assets/logo.png" alt="">MASZ Solutions</a></header>
+<div id="main">
+<section class="post">
+  <header class="major"><h1>Projekte</h1><p class="muted">Wo Logistik und Verantwortung zusammenkommen.</p></header>
+
+  <div class="proj-grid">
+
+    <article class="proj">
+      <img src="images/hero.jpg" alt="">
+      <div class="p">
+        <h3>Projekt Licht</h3>
+        <p class="muted">Strom & Licht für bewohnte Nachkriegsgebiete – modulare PV-Sets (Panel, Inverter, Speicher), sichere Lieferung, Nachverfolgung und Dokumentation.</p>
+        <p><span class="pill">Solar</span><span class="pill">Humanitär</span><span class="pill">Dokumentiert</span></p>
+        <p><a href="solar.html" class="button small">Mehr erfahren</a></p>
+      </div>
+    </article>
+
+    <article class="proj">
+      <img src="images/hero.jpg" alt="">
+      <div class="p">
+        <h3>Autoteile-Logistik</h3>
+        <p class="muted">Zeitkritische Komponenten, Direktfahrten, dokumentierte Übergabe – für Werkstätten und Händler.</p>
+        <p><span class="pill">Direkt</span><span class="pill">EU-weit</span></p>
+      </div>
+    </article>
+
+    <article class="proj">
+      <img src="images/hero.jpg" alt="">
+      <div class="p">
+        <h3>Invest / Partnerschaft</h3>
+        <p class="muted">Wachstum mit Sinn: Fahrzeuge, Solarprojekte oder IT – wir bieten transparente Beteiligungs-Modelle mit Reporting.</p>
+        <p><span class="pill">Transparenz</span><span class="pill">Reporting</span></p>
+      </div>
+    </article>
+
+  </div>
+</section>
+</div>
+<footer id="footer"><p class="copyright">© <span id="y"></span> MASZ Solutions · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p></footer>
+</div>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>

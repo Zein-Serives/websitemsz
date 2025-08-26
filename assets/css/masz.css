@@ -1,2 +1,83 @@
-/* ========== MASZ Custom CSS (Release 2.1) ========== */
-# ... (shortened in code execution for brevity, see assistant's message above) ...
+/* ========== MASZ Custom CSS (Release 2.1 FIX) ========== */
+
+/* ---- Fixe, flache Top-Navigation ---- */
+#wrapper { padding-top: 72px; } /* Platz für fixen Header */
+#header,
+#header.alt{
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  padding: .6rem 1rem;
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(2,6,23,.08);
+  box-shadow: none;
+}
+#header.scrolled{ box-shadow: 0 8px 18px rgba(0,0,0,.08); }
+
+/* Logo kompakt, kein Kasten */
+#header .logo{
+  display: flex; align-items: center; gap: .5rem;
+  font-weight: 700; letter-spacing: .2px; text-transform: none;
+  background: transparent !important; border: 0 !important; box-shadow: none !important; padding: 0 !important;
+}
+#header .logo img{ height: 36px; width: auto; margin: 0; }
+
+/* Mobile Offcanvas sicherheitshalber deaktivieren */
+#navPanel, #navPanel + .navPanelToggle{ display: none !important; visibility: hidden !important; }
+body.is-menu-visible{ overflow: auto !important; }
+
+/* ---- Hero: Pills besser lesbar ---- */
+.pill, .features li{
+  background: #0b1220; color: #fff; border: 1px solid rgba(255,255,255,.28);
+  padding: .45rem .8rem; border-radius: 999px;
+}
+
+/* ---- „Unsere Stärken“ – Kartenlayout ---- */
+.masz-cards{ display: grid; gap: 18px; grid-template-columns: repeat(3, minmax(0,1fr)); margin-top: .5rem; }
+.masz-card{
+  background: #fff; border: 1px solid rgba(2,6,23,.12); border-radius: 14px;
+  padding: 16px 16px 14px; box-shadow: 0 6px 20px rgba(2,6,23,.06);
+}
+.masz-card h3{ display:flex; align-items:center; gap:.6rem; margin: 0 0 .35rem; }
+.masz-card .ic{
+  width: 24px; height: 24px; display:inline-flex; align-items:center; justify-content:center;
+  border-radius: 8px; background:#f1f5f9; color:#0b1220; font-size: 14px;
+}
+.masz-card p{ margin:.25rem 0 0; color:#334155; line-height: 1.45; }
+
+@media (max-width: 980px){ .masz-cards{ grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px){ .masz-cards{ grid-template-columns: 1fr; } }
+
+/* ---- Breadcrumb & Tabs (optional nutzbar) ---- */
+.breadcrumb{ display:flex; gap:.5rem; align-items:center; font-size:.92rem; color:#475569; margin:.6rem 0; }
+.breadcrumb a{ color:#0ea5e9; text-decoration:none; }
+.tabbar{ display:flex; gap:.5rem; flex-wrap:wrap; margin:.6rem 0; }
+.tabbar a{
+  padding:.4rem .7rem; border:1px solid rgba(2,6,23,.12); border-radius:999px;
+  background:#fff; text-decoration:none; color:#0b1220;
+}
+.tabbar a.active{ background:#0b1220; color:#fff; border-color:#0b1220; }
+
+/* ---- Seiten ohne Hero (optional per body.page--plain) ---- */
+.page--plain #intro, .page--plain .image.main, .page--plain .banner{ display:none !important; }
+.page--plain #main{ padding-top: 1.25rem; }
+
+/* ---- Preis-Seite: Ergebnis-Karte & Tabelle ---- */
+.price-wrap .row{ display:grid; grid-template-columns: 1.2fr 1fr; gap:10px; align-items:center; margin:.5rem 0; }
+.price-wrap .row input, .price-wrap .row select, .price-wrap .row textarea{
+  width:100%; padding:10px; border:1px solid rgba(2,6,23,.15); border-radius:10px;
+}
+.card{
+  background:#fff; border:1px solid rgba(2,6,23,.12); border-radius:12px;
+  padding:12px; box-shadow: 0 6px 16px rgba(2,6,23,.06);
+}
+.card h3{ margin:.2rem 0 8px; }
+.card table{ width:100%; border-collapse: collapse; }
+.card td{ padding:8px 10px; border-top:1px dashed rgba(2,6,23,.12); }
+.card tfoot td{ border-top:1px solid rgba(2,6,23,.25); font-weight:800; }
+.card .total td:last-child{ font-size:1.1rem; }
+.muted{ color:#475569; }
+.button.small{ padding:.35rem .65rem; font-size:.9rem; }
+
+/* ---- Buttons ---- */
+.button.primary{ background:#0b1220; color:#fff !important; border-color:#0b1220; }
+.button.primary:hover{ filter: brightness(1.05); }
