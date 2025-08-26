@@ -7,10 +7,11 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/masz.css" />
 </head>
-<body class="is-preload">
+<body class="is-preload home-dark">
 <div id="wrapper">
+
 <header id="header">
-  <a href="home.html" class="logo"><img src="assets/logo.png" alt="">MASZ Solutions</a>
+  <a href="home.html" class="logo"><img src="assets/logo.png" alt="MASZ">MASZ Solutions</a>
   <nav id="nav">
     <ul class="links">
       <li><a href="#intro">Home</a></li>
@@ -24,14 +25,14 @@
 
 <div id="main">
   <section id="intro" class="post">
-    <header class="major">
-      <img src="assets/logo.png" alt="" style="height:84px;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.12);margin-bottom:10px">
+    <div class="hero-wrap">
+      <img src="assets/logo.png" alt="MASZ Logo" style="height:92px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.35);margin-bottom:10px">
       <h1>MASZ SOLUTIONS</h1>
       <p>Security & Transport bis <strong>3,5 t</strong> – schnell, sicher, mit <strong>Liebe zum Detail</strong>.<br>Direktfahrten · Sameday/Overnight · Paletten & Stückgut · EU‑weit</p>
-      <ul class="features" style="justify-content:center">
+      <ul class="features">
         <li>EU‑weit</li><li>Direkt ohne Umladung</li><li>Dokumentation</li><li>Fixpreise auf Anfrage</li>
       </ul>
-    </header>
+    </div>
   </section>
 
   <section id="stark" class="post">
@@ -64,7 +65,7 @@
   </section>
 </div>
 
-<footer id="footer">
+<footer id="footer" style="background:transparent;border-top:1px solid rgba(255,255,255,.08);">
   <p class="copyright">© <span id="y"></span> MASZ Solutions ·
     <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
 </footer>
@@ -72,7 +73,7 @@
 
 <script>
 (function(){
-  const h = document.getElementById('header');
+  const h=document.getElementById('header');
   function onS(){ window.scrollY>10 ? h.classList.add('scrolled') : h.classList.remove('scrolled'); }
   window.addEventListener('scroll', onS, {passive:true}); onS();
   document.getElementById('y').textContent = new Date().getFullYear();
