@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Direktanfrage – MASZ Solutions</title><link rel="stylesheet" href="/assets/css/style.css"></head>
+<body><div id="wrapper">
+<header class="site"><a href="/" class="brand"><img src="/assets/img/logo.png"> MASZ Solutions</a>
+<nav><ul><li><a href="/">Home</a></li><li><a href="/services/">Leistungen</a></li><li><a href="/preise/">Richtwerte</a></li><li><a href="/projekte/">Projekte</a></li><li><a href="/about/">Über uns</a></li><li><a href="/booking/">Direktanfrage</a></li><li><a href="/search/">Auftragssuche</a></li><li><a href="/contact/">Kontakt</a></li></ul></nav></header>
+
+<section><h1>Direkte Anfrage / Buchung</h1>
+<p class="muted">Telefon & E‑Mail sind Pflicht, damit die Dispo Sie erreicht.</p>
+<form id="f" class="card">
+  <div class="row"><label>Firma</label><input id="firma"></div>
+  <div class="row"><label>Ihr Name*</label><input id="name" required></div>
+  <div class="row"><label>Telefon*</label><input id="tel" required></div>
+  <div class="row"><label>E‑Mail*</label><input id="mail" type="email" required></div>
+  <div class="row"><label>Abholort</label><input id="from"></div>
+  <div class="row"><label>Zustellort</label><input id="to"></div>
+  <div class="row"><label>Datum & Uhrzeit</label><input id="when"></div>
+  <div class="row"><label>Ladung</label><input id="cargo"></div>
+  <div class="row"><label>Option</label><select id="opt"><option>Standard</option><option>Sameday</option><option>Overnight</option><option>Security</option></select></div>
+  <div class="row"><label>Nachricht</label><textarea id="msg" rows="4"></textarea></div>
+  <div class="row"><div></div><div><a id="m" class="button" href="#">Per E‑Mail senden</a> <a id="w" class="button" href="#">WhatsApp</a></div></div>
+</form>
+<script>
+(function(){
+  function t(id){return document.getElementById(id).value||''}
+  function body(){return ['Neue Direkt‑Anfrage','Firma: '+t('firma'),'Name: '+t('name'),'Telefon: '+t('tel'),'E‑Mail: '+t('mail'),'Von: '+t('from'),'Nach: '+t('to'),'Zeit: '+t('when'),'Ladung: '+t('cargo'),'Option: '+t('opt'),'Nachricht: '+t('msg')].join('%0D%0A')}
+  document.getElementById('m').onclick=e=>{e.preventDefault();location.href='mailto:info@masz-solutions.de?subject=Direktanfrage%20MASZ&body='+body()}
+  document.getElementById('w').onclick=e=>{e.preventDefault();location.href='https://wa.me/4915739720978?text='+body()}
+})();
+</script>
+</section>
+
+<footer class="site"><p>© <span id="year"></span> MASZ Solutions · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></p></footer>
+</div><script src="/assets/js/main.js"></script></body></html>

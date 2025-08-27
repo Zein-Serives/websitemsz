@@ -1,1 +1,59 @@
-<!DOCTYPE html><html><body><h1>Preise</h1></body></html>
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Richtwerte & Rechner – MASZ Solutions</title><link rel="stylesheet" href="/assets/css/style.css"></head>
+<body><div id="wrapper">
+<header class="site"><a href="/" class="brand"><img src="/assets/img/logo.png"> MASZ Solutions</a>
+<nav><ul><li><a href="/">Home</a></li><li><a href="/services/">Leistungen</a></li><li><a href="/preise/">Richtwerte</a></li><li><a href="/projekte/">Projekte</a></li><li><a href="/about/">Über uns</a></li><li><a href="/booking/">Direktanfrage</a></li><li><a href="/search/">Auftragssuche</a></li><li><a href="/contact/">Kontakt</a></li></ul></nav></header>
+
+<section><h1>Richtwerte & Kostenrechner</h1>
+<p class="muted">Alle Werte sind <strong>Richtwerte</strong>. Finale Kalkulation nach Absprache mit Tourdaten & Dispo.</p>
+<div class="card">
+  <div class="row"><label>Abrechnungsart</label><select id="mode"><option value="km">pro Kilometer</option><option value="hour">pro Stunde</option><option value="day">pro Tag</option></select></div>
+  <div class="row mode-km"><label>Distanz (km)</label><input id="distance" type="number" value="250" min="0"></div>
+  <div class="row mode-hour"><label>Stunden</label><input id="hours" type="number" value="6" step="0.5" min="0"></div>
+  <div class="row mode-day"><label>Tage</label><input id="days" type="number" value="1" min="1"></div>
+  <div class="row"><label>Be-/Entladezeit (min)</label><input id="loadMins" type="number" value="30"><div class="muted">20 min frei</div></div>
+  <div class="row"><label>Standzeit (h)</label><input id="standHours" type="number" value="1" step="0.5"><div class="muted">wenn Wagen steht</div></div>
+  <div class="row"><label>Nacht/So/FT</label><input id="nightHoliday" type="checkbox"><div class="muted">+25 % (nur Stunde/Tag)</div></div>
+  <div class="row"><label>Maut / Sonstiges (€)</label><input id="extras" type="number" value="0"></div>
+  <div class="row"><div></div><div><a id="calcBtn" class="button" href="#">Berechnen</a> <a id="resetBtn" class="button" href="#">Zurücksetzen</a></div></div>
+</div>
+<div class="card" style="margin-top:10px"><h3>Ergebnis (Richtwert)</h3>
+<table class="table"><tbody id="breakdown"><tr><td>Bitte auf „Berechnen“ klicken.</td></tr></tbody><tfoot><tr><td>Gesamtsumme (netto)</td><td id="total">–</td></tr></tfoot></table>
+<p class="muted"><strong>Tagessatz:</strong> Kilometer <strong>bis 300 km inklusive</strong>, darüber Aufpreis.</p></div>
+</section>
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const P={km:0.81, hour:32, day:194, stand:17, free:20, night:0.25};
+  function euro(n){return (Math.round(n*100)/100).toFixed(2).replace('.',',')+' €'}
+  function toggle(){
+    const m=$('mode').value;
+    document.querySelectorAll('.mode-km').forEach(e=>e.style.display=m==='km'?'grid':'none');
+    document.querySelectorAll('.mode-hour').forEach(e=>e.style.display=m==='hour'?'grid':'none');
+    document.querySelectorAll('.mode-day').forEach(e=>e.style.display=m==='day'?'grid':'none');
+  }
+  function calc(){
+    const m=$('mode').value, dist=+($('distance')?.value||0), hrs=+($('hours')?.value||0),
+          days=+($('days')?.value||0), load=+$('loadMins').value, stand=+$('standHours').value,
+          extras=+$('extras').value, night=$('nightHoliday').checked;
+    let rows=[], total=0;
+    const over=Math.max(load-P.free,0), loadC=over/60*P.stand;
+    if(over>0){rows.push(['Be-/Entladezeit (über 20 min)', over+' min × '+P.stand+' €', euro(loadC)]); total+=loadC;}
+    if(stand>0){const c=stand*P.stand; rows.push(['Standzeit', stand+' h × '+P.stand+' €', euro(c)]); total+=c;}
+    if(m==='km'){const c=dist*P.km; rows.push(['Kilometer', dist+' km × '+P.km.toFixed(2)+' €', euro(c)]); total+=c;}
+    if(m==='hour'){let c=hrs*P.hour; if(night)c*=(1+P.night); rows.push([night?'Fahrzeit (Nacht/So/FT +25%)':'Fahrzeit', hrs+' h × '+P.hour+' €', euro(c)]); total+=c;}
+    if(m==='day'){let c=days*P.day; if(night)c*=(1+P.night); rows.push([night?'Tagessatz (Nacht/So/FT +25%)':'Tagessatz', days+' × '+P.day+' €', euro(c)]); rows.push(['Hinweis','Kilometer bis 300 km inklusive, darüber Aufpreis.','']); total+=c;}
+    if(extras>0){rows.push(['Maut / Sonstiges','',euro(extras)]); total+=extras;}
+    $('breakdown').innerHTML = rows.map(r=>`<tr><td>${r[0]}<br><span class="muted">${r[1]}</span></td><td>${r[2]}</td></tr>`).join('');
+    $('total').textContent = euro(total);
+  }
+  $('mode').addEventListener('change', toggle);
+  document.getElementById('calcBtn').addEventListener('click', e=>{e.preventDefault();calc();});
+  document.getElementById('resetBtn').addEventListener('click', e=>{e.preventDefault();location.reload();});
+  toggle();
+})();
+</script>
+
+<footer class="site"><p>© <span id="year"></span> MASZ Solutions · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></p></footer>
+</div><script src="/assets/js/main.js"></script></body></html>
