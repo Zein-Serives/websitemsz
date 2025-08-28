@@ -1,1 +1,29 @@
-<!DOCTYPE html><html lang='de'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Richtwerte & Rechner – MASZ Solutions</title><link rel='stylesheet' href='/assets/css/style.css'></head><body><header class='wrap'><a href='/'><strong>MASZ Solutions</strong></a> · <a href='/services/'>Leistungen</a> · <a href='/preise/'>Richtwerte</a> · <a href='/projekte/'>Projekte</a> · <a href='/about/'>Über uns</a> · <a href='/booking/'>Anfrage</a> · <a href='/contact/'>Kontakt</a></header><main class='wrap'><h1>Richtwerte & Rechner</h1><p>0,81 €/km | 32 €/h | 194 €/Tag | Standzeit 17 €/h (20 min frei) | Nacht/So/FT +25 % (Stunde/Tag) | Tag: bis 300 km inklusive</p></main><footer class='wrap'>© <span id='year'></span> MASZ Solutions · <a href='/impressum.html'>Impressum</a> · <a href='/datenschutz.html'>Datenschutz</a></footer><script src='/assets/js/main.js'></script></body></html>
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Richtwerte & Rechner – MASZ Solutions</title>
+<link rel="stylesheet" href="/assets/css/style.css"></head><body><div id="wrapper">
+<header class="site"><a class="brand" href="/"><img src="/assets/img/logo.png" alt="MASZ Logo"><span>MASZ Solutions</span></a>
+<nav class="primary"><ul>
+<li><a href="/">Home</a></li><li><a href="/services/">Leistungen</a></li><li><a href="/preise/">Richtwerte</a></li>
+<li><a href="/projekte/">Projekte</a></li><li><a href="/about/">Über uns</a></li><li><a href="/booking/">Anfrage</a></li><li><a href="/contact/">Kontakt</a></li>
+</ul></nav></header>
+
+<section class="section-panel"><h1>Richtwerte & Kostenrechner</h1>
+<p class="muted">Alle Werte sind <strong>Richtwerte</strong>. Finale Kalkulation nach Absprache mit Tourdaten & Dispo.</p></section>
+<section class="card" style="margin-top:10px">
+  <div class="row"><label>Abrechnungsart</label><select id="mode"><option value="km">pro Kilometer</option><option value="hour">pro Stunde</option><option value="day">pro Tag</option></select></div>
+  <div class="row mode-km"><label>Distanz (km)</label><input id="distance" type="number" value="250" min="0"></div>
+  <div class="row mode-hour"><label>Stunden</label><input id="hours" type="number" value="6" step="0.5" min="0"></div>
+  <div class="row mode-day"><label>Tage</label><input id="days" type="number" value="1" min="1"></div>
+  <div class="row"><label>Be-/Entladezeit (min)</label><input id="loadMins" type="number" value="30"><div class="muted">20 min frei</div></div>
+  <div class="row"><label>Standzeit (h)</label><input id="standHours" type="number" value="1" step="0.5"><div class="muted">wenn Wagen steht</div></div>
+  <div class="row"><label>Nacht/So/Feiertag</label><input id="nightHoliday" type="checkbox"><div class="muted">+25 % (nur Stunde/Tag)</div></div>
+  <div class="row"><label>Maut / Sonstiges (€)</label><input id="extras" type="number" value="0"></div>
+  <div class="row"><div></div><div class="actions" style="justify-content:flex-start"><a id="calcBtn" class="btn" href="#">Berechnen</a> <a id="resetBtn" class="btn ghost" href="#">Zurücksetzen</a></div></div>
+</section>
+<section class="card" style="margin-top:10px"><h3>Ergebnis (Richtwert)</h3>
+<table class="table"><tbody id="breakdown"><tr><td>Bitte auf „Berechnen“ klicken.</td></tr></tbody><tfoot><tr><td>Gesamtsumme (netto)</td><td id="total">–</td></tr></tfoot></table>
+<p class="muted"><strong>Tagessatz:</strong> Kilometer <strong>bis 300 km inklusive</strong>, darüber Aufpreis.</p></section>
+<script src="/assets/js/rechner.js"></script>
+
+<footer class="site"><p>© <script>document.write(new Date().getFullYear())</script> MASZ Solutions · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></p></footer>
+<script src="/assets/js/main.js"></script></div></body></html>
