@@ -1,43 +1,73 @@
 <!doctype html>
-<html lang="de"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kontakt – MASZ Solutions</title>
-<link rel="stylesheet" href="/assets/css/style.css">
-<script defer src="/assets/js/main.js"></script>
-</head><body>
-<header class="nav">
-  <div class="bar container">
-    <a class="brand" href="/index.html"><img src="/assets/img/logo.png" alt="MASZ Logo"><span>MASZ&nbsp;Solutions</span></a>
-    <nav><a href="/index.html" class="">Home</a><a href="/services/index.html" class="">Leistungen</a><a href="/preise/index.html" class="">Richtwerte</a><a href="/projekte/index.html" class="">Projekte</a><a href="/about/index.html" class="">Über uns</a><a href="/booking/index.html" class="">Anfrage</a><a href="/contact/index.html" class="active">Kontakt</a></nav>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontakt – MASZ Solutions</title>
+  <meta name="description" content="MASZ Solutions – Transporte, Security (§34 GewO), Energie & Projekte. Mobil. Sicher. Zuverlässig.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script defer src="/assets/js/main.js"></script>
+</head>
+<body>
+  <div class="ribbon">🎉 Relaunch Special: <strong>15&nbsp;% Rabatt</strong> auf alle Leistungen – nur bis <span id="promo-deadline"></span>. <a href="/prices/">Jetzt sichern</a></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/"><img src="/assets/img/logo.svg" alt="MASZ Solutions Logo"> <span>MASZ Solutions</span></a>
+      <button class="nav-toggle" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a class="nav-link " href="/">Home</a>
+        <a class="nav-link " href="/services/">Leistungen</a>
+        <a class="nav-link " href="/security/">Security</a>
+        <a class="nav-link " href="/prices/">Preise</a>
+        <a class="nav-link " href="/projects/">Projekte</a>
+        <a class="nav-link " href="/about/">Über uns</a>
+        <a class="nav-link active" href="/contact/">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    
+<h1>Kontakt</h1>
+<p class="lead">Erreichen Sie uns direkt – wir melden uns schnell zurück.</p>
+<div class="grid cols-2">
+  <form class="form card" name="contact" method="post" data-netlify="true">
+    <input type="hidden" name="form-name" value="contact">
+    <label>Ihr Name<input class="input" name="name" required></label>
+    <label>E-Mail<input class="input" type="email" name="email" required></label>
+    <label>Telefon<input class="input" type="tel" name="phone"></label>
+    <label>Nachricht<textarea class="input" name="message" rows="5" required></textarea></label>
+    <button class="button" type="submit">Absenden</button>
+  </form>
+  <div class="card">
+    <h3>Direkt</h3>
+    <p><a href="tel:+4915739720978">+49 1573 9720978</a><br><a href="tel:+491729778088">+49 172 9778088</a><br><a href="mailto:info@masz-solutions.de">info@masz-solutions.de</a></p>
+    <p class="notice">Oder nutzen Sie die Direktanfrage.</p>
+    <a class="cta" href="/booking/">Direkt anfragen</a>
   </div>
-</header>
-
-<section class="section"><div class="container">
- <h2>Kontakt</h2>
- <div class="grid grid-2">
-   <div class="card">
-     <h3>DE • Deutsch</h3>
-     <p class="lead">+49 1573 9720978</p>
-     <div class="cta"><a class="btn" href="tel:+4915739720978">Anrufen</a><a class="btn btn-ghost" href="https://wa.me/4915739720978" target="_blank">WhatsApp</a></div>
-   </div>
-   <div class="card">
-     <h3>AR • العربية (Dispo)</h3>
-     <p class="lead">+49 172 9778088</p>
-     <div class="cta"><a class="btn" href="tel:+491729778088">الاتصال</a><a class="btn btn-ghost" href="https://wa.me/491729778088" target="_blank">واتساب</a></div>
-   </div>
- </div>
- <hr><p>E‑Mail: <a href="mailto:info@masz-solutions.de">info@masz-solutions.de</a></p>
-</div></section>
-
-<footer><div class="container small">
-  <div>© 2025 MASZ Solutions</div>
-  <div class="flex">
-   <a href="/impressum.html">Impressum</a>
-   <a href="/datenschutz.html">Datenschutz</a>
-  </div>
-</div></footer>
-<div class="fixed-cta">
-  <a class="btn btn-primary" href="/booking/index.html">Direktanfrage</a>
-  <a class="btn btn-ghost" href="https://wa.me/4915739720978" target="_blank">WhatsApp (DE)</a>
 </div>
-</body></html>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/img/logo.svg" alt="MASZ Solutions Logo">
+        <div>
+          <strong>MASZ Solutions</strong><br>
+          Mobil · Sicher · Zuverlässig
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="tel:+4915739720978">+49 1573 9720978</a>
+        <a href="tel:+491729778088">+49 172 9778088</a>
+        <a href="mailto:info@masz-solutions.de">info@masz-solutions.de</a>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+      </div>
+      <p class="legal">© 2025 MASZ Solutions. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+</body>
+</html>
