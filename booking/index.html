@@ -33,8 +33,12 @@
 <h1>Direktanfrage</h1>
 <p class="lead">Sende uns die Eckdaten – wir bestätigen dir schnell Preis & Verfügbarkeit.</p>
 <div class="hint">Hinweis: Du erhältst ein <strong>individuelles Angebot</strong> auf Basis deiner Angaben. Das fällt häufig <em>günstiger</em> aus als unsere Richtwerte.</div>
-<form class="form card" name="booking" method="post" data-netlify="true">
-  <input type="hidden" name="form-name" value="booking">
+
+<form class="form card" action="https://formsubmit.co/info@masz-solutions.de" method="POST">
+  <input type="hidden" name="_subject" value="Direktanfrage – MASZ Solutions">
+  <input type="hidden" name="_next" value="https://masz-solutions.de/danke/">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_autoresponse" value="Danke für deine Direktanfrage an MASZ Solutions. Wir prüfen kurz die Verfügbarkeit und senden dir ein individuelles Angebot (oft günstiger als die Richtwerte).">
   <label>Leistung
     <select name="service" required>
       <option value="transport">Transport</option>
@@ -44,8 +48,10 @@
   <label>Ort / Route<input class="input" name="route" placeholder="z. B. Dortmund → Köln" required></label>
   <label>Datum & Uhrzeit<input class="input" name="datetime" placeholder="z. B. 12.09.2025, 08:00"></label>
   <label>Details<textarea class="input" name="details" rows="5" placeholder="Wichtige Hinweise, Umfang, besondere Anforderungen"></textarea></label>
+  <label>E-Mail für Rückfrage<input class="input" type="email" name="email" required></label>
   <button class="button" type="submit">Anfrage senden</button>
 </form>
+
 
   </main>
   <footer class="site-footer">

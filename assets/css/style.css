@@ -47,9 +47,7 @@ h2{font-size:clamp(22px,3vw,28px);margin:22px 0 10px;color:#d7e8ff}
 .button{background:linear-gradient(90deg,var(--accent),#ff9ccc);border:0;color:#fff;font-weight:700;padding:12px 14px;border-radius:12px}
 .hero{display:grid;gap:14px}
 .hero .actions{display:flex;gap:10px;flex-wrap:wrap}
-/* Quick-Call bar (mobile) */
 .quickbar{position:fixed;left:0;right:0;bottom:0;display:none;gap:8px;padding:10px;background:rgba(5,8,12,.9);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.08);z-index:70}
 .quickbar .qb{flex:1;text-align:center;padding:12px 10px;border-radius:10px;background:linear-gradient(180deg,#172433,#0f1925);color:#eaf2ff;font-weight:700;border:1px solid rgba(255,255,255,.06)}
 @media(max-width:760px){.quickbar{display:flex} body{padding-bottom:64px}}
-/* Hinweis-Kästchen */
 .hint{background:#0b1522;border:1px dashed rgba(255,255,255,.2);border-radius:12px;padding:10px;color:#bcd3ee}
