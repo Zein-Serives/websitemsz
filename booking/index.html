@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Direktanfrage – MASZ Solutions</title>
   <meta name="description" content="MASZ Solutions – Transporte, Security (§34a GewO), Energie & Projekte. Mobil. Sicher. Zuverlässig.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -12,11 +13,12 @@
   <script defer src="/assets/js/main.js"></script>
 </head>
 <body>
-  <div class="ribbon">🎉 Relaunch Special: <strong>15&nbsp;% Rabatt</strong> – bis <span id="promo-deadline"></span>. <a href="/prices/">Jetzt sichern</a></div>
+  <div class="ribbon">🎉 Relaunch Special: 15 % Rabatt – bis <span id="promo-deadline"></span>. <a href="/prices/">Jetzt sichern</a></div>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="/"><img class="brand-logo" src="/assets/img/logo.png" alt="MASZ Solutions Logo"><span>MASZ Solutions</span></a>
-      <button class="nav-toggle" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+      <div class="lang-switch"><a class="lang" href="/de/">DE</a> · <a class="lang" href="/en/">EN</a> · <a class="lang" href="/ar/">العربية</a></div>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
       <nav class="nav">
         <a class="nav-link " href="/">Home</a>
         <a class="nav-link " href="/services/">Leistungen</a>
@@ -29,30 +31,7 @@
     </div>
   </header>
   <main class="container">
-    
-<h1>Direktanfrage</h1>
-<p class="lead">Sende uns die Eckdaten – wir bestätigen dir schnell Preis & Verfügbarkeit.</p>
-<div class="hint">Hinweis: Du erhältst ein <strong>individuelles Angebot</strong> auf Basis deiner Angaben. Das fällt häufig <em>günstiger</em> aus als unsere Richtwerte.</div>
-
-<form class="form card" action="https://formsubmit.co/info@masz-solutions.de" method="POST">
-  <input type="hidden" name="_subject" value="Direktanfrage – MASZ Solutions">
-  <input type="hidden" name="_next" value="https://masz-solutions.de/danke/">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_autoresponse" value="Danke für deine Direktanfrage an MASZ Solutions. Wir prüfen kurz die Verfügbarkeit und senden dir ein individuelles Angebot (oft günstiger als die Richtwerte).">
-  <label>Leistung
-    <select name="service" required>
-      <option value="transport">Transport</option>
-      <option value="security">Security</option>
-    </select>
-  </label>
-  <label>Ort / Route<input class="input" name="route" placeholder="z. B. Dortmund → Köln" required></label>
-  <label>Datum & Uhrzeit<input class="input" name="datetime" placeholder="z. B. 12.09.2025, 08:00"></label>
-  <label>Details<textarea class="input" name="details" rows="5" placeholder="Wichtige Hinweise, Umfang, besondere Anforderungen"></textarea></label>
-  <label>E-Mail für Rückfrage<input class="input" type="email" name="email" required></label>
-  <button class="button" type="submit">Anfrage senden</button>
-</form>
-
-
+    <h1>Direktanfrage</h1>
   </main>
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -70,7 +49,7 @@
       <p class="legal">© 2025 MASZ Solutions. Alle Rechte vorbehalten.</p>
     </div>
   </footer>
-  <div class="quickbar" role="navigation" aria-label="Schnellzugriff Telefon">
+  <div class="quickbar" role="navigation" aria-label="Quick actions">
     <a class="qb" href="tel:+4915739720978">DISPO DE</a>
     <a class="qb" href="tel:+491729778088">DISPO العربية</a>
     <a class="qb" href="mailto:info@masz-solutions.de">E-Mail</a>

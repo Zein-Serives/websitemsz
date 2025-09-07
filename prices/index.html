@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Preisübersicht (Richtwerte) – MASZ Solutions</title>
+  <title>Preise – MASZ Solutions</title>
   <meta name="description" content="MASZ Solutions – Transporte, Security (§34a GewO), Energie & Projekte. Mobil. Sicher. Zuverlässig.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -12,11 +13,12 @@
   <script defer src="/assets/js/main.js"></script>
 </head>
 <body>
-  <div class="ribbon">🎉 Relaunch Special: <strong>15&nbsp;% Rabatt</strong> – bis <span id="promo-deadline"></span>. <a href="/prices/">Jetzt sichern</a></div>
+  <div class="ribbon">🎉 Relaunch Special: 15 % Rabatt – bis <span id="promo-deadline"></span>. <a href="/prices/">Jetzt sichern</a></div>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="/"><img class="brand-logo" src="/assets/img/logo.png" alt="MASZ Solutions Logo"><span>MASZ Solutions</span></a>
-      <button class="nav-toggle" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+      <div class="lang-switch"><a class="lang" href="/de/">DE</a> · <a class="lang" href="/en/">EN</a> · <a class="lang" href="/ar/">العربية</a></div>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
       <nav class="nav">
         <a class="nav-link " href="/">Home</a>
         <a class="nav-link " href="/services/">Leistungen</a>
@@ -29,45 +31,7 @@
     </div>
   </header>
   <main class="container">
-    
-<h1>Preisübersicht <span class="badge">Richtwerte</span></h1>
-<p class="lead">Transparente Richtwerte zum schnellen Einschätzen. Der <strong>Endpreis</strong> kann je nach Strecke/Einsatz variieren. Bei <a href="/booking/">Direktanfrage</a> erstellen wir ein individuelles Angebot – <em>oft günstiger</em>. Die <strong>Relaunch-15&nbsp;%</strong> werden in der Endsumme berücksichtigt.</p>
-<div class="card">
-  <h3>Übersicht</h3>
-  <table class="table">
-    <tr><th>Leistung</th><th>Einheit</th><th>ab Preis</th></tr>
-    <tr><td>Transport</td><td>pro km</td><td>0,95 €</td></tr>
-    <tr><td>Transport</td><td>pro Tag</td><td>290 €</td></tr>
-    <tr><td>Security</td><td>pro Stunde</td><td>39 €</td></tr>
-  </table>
-  <p class="notice">Hinweis: Zuschläge (z. B. Nacht/So/FT) können anfallen. Alle Preise sind Richtwerte.</p>
-</div>
-<div class="card" id="calc">
-  <h3>Direktrechner – <span class="badge">Richtwert</span></h3>
-  <div class="grid cols-3">
-    <div>
-      <label><input type="radio" name="mode" value="km" checked> Transport (km)</label><br>
-      <label><input type="radio" name="mode" value="hour"> Stunde</label><br>
-      <label><input type="radio" name="mode" value="day"> Tag</label>
-    </div>
-    <div>
-      <label>Kilometer<input class="input" id="km" type="number" min="0" placeholder="z. B. 120"></label>
-      <label>Stunden<input class="input" id="hours" type="number" min="0" placeholder="z. B. 6"></label>
-      <label>Tage<input class="input" id="days" type="number" min="0" placeholder="z. B. 1"></label>
-    </div>
-    <div>
-      <label><input type="checkbox" id="night"> Nacht/So/FT (+25 %)</label>
-      <div class="card" style="margin-top:10px">
-        <div>Zwischensumme (Richtwert): <strong id="price-raw">–</strong></div>
-        <div>Relaunch –15 % (Richtwert): <strong id="price-final">–</strong></div>
-      </div>
-      <a class="cta" href="/booking/">Individuelles Angebot anfragen</a>
-    </div>
-  </div>
-  <p class="notice">Der Rechner liefert Richtwerte. Der endgültige Preis kommt mit deinem individuellen Angebot.</p>
-  <script src="/assets/js/rechner.js" defer></script>
-</div>
-
+    <h1>Preisübersicht (Richtwerte)</h1>
   </main>
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -85,7 +49,7 @@
       <p class="legal">© 2025 MASZ Solutions. Alle Rechte vorbehalten.</p>
     </div>
   </footer>
-  <div class="quickbar" role="navigation" aria-label="Schnellzugriff Telefon">
+  <div class="quickbar" role="navigation" aria-label="Quick actions">
     <a class="qb" href="tel:+4915739720978">DISPO DE</a>
     <a class="qb" href="tel:+491729778088">DISPO العربية</a>
     <a class="qb" href="mailto:info@masz-solutions.de">E-Mail</a>

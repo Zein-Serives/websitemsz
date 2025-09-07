@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /en/
+Disallow: /ar/
+
+Sitemap: https://masz-solutions.de/sitemap.xml
