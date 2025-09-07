@@ -4,11 +4,10 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetic
 a{color:var(--brand);text-decoration:none}
 .container{max-width:1080px;margin:0 auto;padding:0 16px}
 .site-header{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.75);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:10px;height:64px}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:8px}
 .brand{display:flex;gap:10px;align-items:center;font-weight:700;color:#fff}
 .brand-logo{height:28px;width:auto;display:block}
 .lang-switch{font-size:14px;color:#cfe4ff}
-.lang-switch .lang{color:#cfe4ff}
 .nav{position:fixed;inset:64px 0 auto 0;background:rgba(7,10,14,.98);transform:translateY(-120%);transition:.25s;padding:12px 16px;display:flex;flex-direction:column;gap:6px;border-bottom:1px solid rgba(255,255,255,.06)}
 .nav.open{transform:translateY(0)}
 .nav-link{padding:12px 10px;border-radius:10px;color:#cfe4ff}
@@ -18,7 +17,6 @@ a{color:var(--brand);text-decoration:none}
 @media(min-width:920px){
   .nav{position:static;transform:none;flex-direction:row;background:transparent;border:0;inset:auto;gap:6px;padding:0}
   .nav-toggle{display:none}
-  .lang-switch{order:3}
 }
 .ribbon{position:sticky;top:0;z-index:60;background:linear-gradient(90deg,var(--accent),#ff7ab8);color:#fff;text-align:center;font-weight:700;padding:8px 12px;font-size:14px}
 .ribbon a{color:#fff;text-decoration:underline}
@@ -54,3 +52,6 @@ h2{font-size:clamp(22px,3vw,28px);margin:22px 0 10px;color:#d7e8ff}
 .quickbar .qb{flex:1;text-align:center;padding:12px 10px;border-radius:10px;background:linear-gradient(180deg,#172433,#0f1925);color:#eaf2ff;font-weight:700;border:1px solid rgba(255,255,255,.06)}
 @media(max-width:760px){.quickbar{display:flex} body{padding-bottom:64px}}
 .hint{background:#0b1522;border:1px dashed rgba(255,255,255,.2);border-radius:12px;padding:10px;color:#bcd3ee}
+/* RTL tweaks */
+html[lang="ar"] body{direction:rtl}
+html[lang="ar"] .header-inner, html[lang="ar"] .footer-inner {{text-align:right}}
