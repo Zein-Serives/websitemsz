@@ -52,6 +52,6 @@ h2{font-size:clamp(22px,3vw,28px);margin:22px 0 10px;color:#d7e8ff}
 .quickbar .qb{flex:1;text-align:center;padding:12px 10px;border-radius:10px;background:linear-gradient(180deg,#172433,#0f1925);color:#eaf2ff;font-weight:700;border:1px solid rgba(255,255,255,.06)}
 @media(max-width:760px){.quickbar{display:flex} body{padding-bottom:64px}}
 .hint{background:#0b1522;border:1px dashed rgba(255,255,255,.2);border-radius:12px;padding:10px;color:#bcd3ee}
-/* RTL tweaks */
+/* RTL */
 html[lang="ar"] body{direction:rtl}
 html[lang="ar"] .header-inner, html[lang="ar"] .footer-inner {{text-align:right}}
